@@ -1,0 +1,93 @@
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <form action="/check_result" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div class="card border-primary mb-3 w-75">
+             <div class="card-body text-primary">
+            <h5 class="card-header"> Диагностика болезней сердца</h5>
+        <div class="form-group">
+    <label for="sex">Пол </label>
+    <select name="sex" class="form-control" id="sex">
+      <option>0-Женский</option>
+      <option>1-Мужской</option>
+    </select>
+  </div>
+        <div class="form-group">
+    <label for="cp">Боль в груди</label>
+    <select name="cp" class="form-control" id="cp">
+      <option>0-типичная стенокардия</option>
+      <option>1-атипичная стенокардия</option>
+        <option>2-неангинальная боль</option>
+        <option>3-бессимптомный</option>
+    </select>
+  </div>
+        <div class="form-group">
+    <label for="rbp">Ваше кровяное давление в состояние покоя</label>
+    <input name="rbp" class="form-control" id="rbp">
+  </div>
+        <div class="form-group">
+            <label for="sc">Ваш холерестин в мг/дл</label>
+            <input name="sc" class="form-control" id="sc">
+        </div>
+        <div class="form-group">
+    <label for="fbs">Ваш уровень сахара выше 120мг/дл</label>
+    <select name="fbs" class="form-control" id="fbs">
+      <option>0-Да</option>
+      <option>1-Нет</option>
+    </select>
+  </div>
+         <div class="form-group">
+    <label for="rer">Электрокардиографическое измерение в состоянии покоя</label>
+    <select name="rer" class="form-control" id="rer">
+      <option>0-Нормальное состояние</option>
+      <option>1-Наличие аномалии волны ST-T</option>
+        <option>3-Наличие вероятной или определенной гиперотрофии левого желудочка</option>
+    </select>
+  </div>
+        <div class="form-group">
+        <label for="mhra">Ваш максимальный пульс</label>
+            <input name="mhra" class="form-control" id="mhra">
+  </div>
+
+        <div class="form-group">
+            <label for="eia">Физическая нагрузка вызывают у вас стенокардию?</label>
+            <select name="eia" class="form-control" id="eia">
+      <option>0-Да</option>
+      <option>1-Нет</option>
+            </select>
+        </div>
+        <div class="form-group">
+               <label for="oldpeak">Депрессия ST, вызванная физическими упражнениями относительно отдыха («ST» относится к позициям на графике ЭКГ.</label>
+             <input name="oldpeak" class="form-control" id="oldpeak">
+        </div>
+        <div class="form-group">
+            <label for="slope">Наклон пика ST сегмента упражнений</label>
+            <select name="slope" class="form-control" id="slope">
+      <option>1-наклон вверх</option>
+      <option>2-ровно</option>
+                <option>3-наклон вниз</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="nmv">Количество крупных сосудов</label>
+            <select name="nmv" class="form-control" id="nmv">
+      <option>0</option>
+      <option>1</option>
+                <option>2</option>
+                 <option>3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="tal">Количество крупных сосудов</label>
+            <select name="tal" class="form-control" id="tal">
+      <option>0-отсутствует</option>
+      <option>1-фиксированный дифект</option>
+                <option>2-обратимый дефект</option>
+            </select>
+        </div>
+                 <button type = "submit" href="/check_result" class="btn btn-primary btn-block" >Отправить</button>
+        </div>
+        </div>
+    </form>
+{% endblock %}
